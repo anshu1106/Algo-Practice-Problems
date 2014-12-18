@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+
+public class sort {
+	
+	public static void main(String args[])
+	{
+		int money = 50;
+		int[] toyPrices = {1,12,5,111,200,1000,10,9,6,7,4};
+		int toyTypes=toyPrices.length;
+		Arrays.sort(toyPrices);
+		for(int i=0;i<toyPrices.length;i++)
+		{
+			System.out.println(toyPrices[i]);
+		}
+	}
+
+}

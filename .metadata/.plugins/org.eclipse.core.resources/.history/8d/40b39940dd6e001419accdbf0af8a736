@@ -1,0 +1,62 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Euler2 {
+	static long fib[]=new long[1000];
+	
+	public static void main(String args[])
+	{
+		int cases;
+		long num;
+		precalculateFib();
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			cases=Integer.parseInt(br.readLine());
+//			for(int count=0;count<cases;count++)
+//			{
+//				num=Long.parseLong(br.readLine());
+//				long first=1;
+//				long second = 2;
+//				
+//			}
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void precalculateFib() {
+		// TODO Auto-generated method stub
+		
+		fib[0]=1;
+		fib[1]=2;
+		int i=2;
+		long sum =0;
+		while(i<fib.length)
+		{
+			fib[i]=fib[i-1]+fib[i-2];
+			i++;
+			
+		}
+		
+		for(i=0;i<fib.length;i++)
+		{
+			
+			if(fib[i]%2==0)
+			{
+				sum+=fib[i];
+			}
+		}
+		System.out.println(sum);
+		
+	}
+	
+	
+
+}

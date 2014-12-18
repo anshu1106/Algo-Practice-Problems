@@ -1,0 +1,35 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
+
+
+public class Euler13 {
+	
+	public static void main(String args[])
+	{
+		int cases;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String num;
+		
+		try {
+			cases=Integer.parseInt(br.readLine());
+			BigInteger sum =BigInteger.ZERO;
+			for(int count=0;count<cases;count++)
+			{
+				num = br.readLine();
+				sum = sum.add(new BigInteger(num));
+			}
+			
+			System.out.println(sum.toString().substring(0, 10));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

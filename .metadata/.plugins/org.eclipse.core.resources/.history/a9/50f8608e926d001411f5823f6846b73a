@@ -1,0 +1,56 @@
+
+public class MoneyLeft {
+	
+	public static void main(String args[] )
+	{
+		int money = 50;
+		int[] toyPrices = {1,12,5,111,200,1000,10,9,6,7,4};
+		int toyTypes=toyPrices.length;
+		int priceArray[][]=new int[money+1][toyTypes+1];
+		int moneyLeft[]=new int[toyTypes+1];
+		
+		for(int i=0; i<=money; i++)
+		{
+			priceArray[i][0]=0;
+		}
+		for (int i=0; i<=toyTypes;i++)
+		{
+			priceArray[0][toyTypes]=0;
+		}
+		for(int i=1;i<=money;i++)
+		{
+			for(int j=1;j<=toyTypes;j++)
+			{
+				if(i-toyPrices[j-1]>=0)
+				{
+					if(i==money)
+					{
+						if(priceArray[i-toyPrices[j-1]][j-1]+1 > priceArray[i][j-1])
+						{
+							moneyLeft[j]=
+						}
+					}
+					priceArray[i][j]=Math.max(priceArray[i][j-1],priceArray[i-toyPrices[j-1]][j-1]+1 );
+
+				}
+				else
+				{
+					priceArray[i][j]=priceArray[i][j-1];
+				}
+			}
+		}
+		for(int i=0;i<=money;i++)
+		{
+			for(int j=0;j<=toyTypes;j++)
+			{
+				System.out.print(priceArray[i][j]+" ");
+				
+			}
+			System.out.println();
+		}
+		System.out.println("No of Toys bought"+ priceArray[money][toyTypes]);
+		
+		
+	}
+
+}

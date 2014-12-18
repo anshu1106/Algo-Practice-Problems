@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+
+
+public class Euler1 {
+	
+	public static void main(String args[])
+	{
+		ArrayList<Integer> result = new ArrayList<Integer>(); 
+		double max =  (double) (10^9+1);
+		System.out.println(max);
+		result.add(3);
+		result .add(5);
+		
+	}
+
+}

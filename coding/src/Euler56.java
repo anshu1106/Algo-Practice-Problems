@@ -1,0 +1,77 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
+
+
+public class Euler56 {
+	
+	public static void main(String args[])
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n;
+		String line = null;
+		  try {
+			line = br.readLine();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		n = Integer.parseInt(line);
+		BigInteger pow;
+		int maxSum=0;
+		for(int i=1;i<n;i++)
+		{
+			for(int j=1;j<n; j++)
+			{
+				pow=findPower(i,j);
+				int currentSum= sumOfDigits(pow);
+				if(maxSum < currentSum)
+				{
+					maxSum = currentSum;
+				}
+			}
+		}
+		System.out.println("******"+maxSum);
+	}
+	
+	private static int sumOfDigits(BigInteger num)
+	{
+//		BigInteger sum=new BigInteger("0");
+//		BigInteger zero = new BigInteger("0");
+//		BigInteger ten = new BigInteger("10");
+//		while(num.compareTo(zero)==1)
+//		{
+//			sum = sum.add(num.mod(ten));
+//			num = num.divide(ten);
+//		}
+//		return sum.intValue();
+		int sum = 0;
+		String s = num.toString();
+		for (int i = 0; i < s.length(); i++)
+			sum += s.charAt(i) - '0';
+		return sum;
+	}
+	
+	private static  BigInteger findPower(int i, int j) {
+		// TODO Auto-generated method stub
+		
+		BigInteger power=new BigInteger("1");
+		BigInteger z = BigInteger.valueOf(i);
+		while(j>0)
+		{
+			while(j%2 == 0)
+			{
+				j=j/2;
+				z=z.multiply(z);
+			}
+			j--;power=power.multiply(z);
+		}
+		
+		return power;
+	}
+
+	
+
+}

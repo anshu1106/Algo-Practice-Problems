@@ -1,0 +1,58 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class EulerCriterion {
+	
+	public static void main(String args[])
+	{
+		int tests;
+		Scanner in = new Scanner(System.in);
+		tests=in.nextInt();
+		for(int i=0; i < tests; i++)
+		{
+			long a = in.nextLong();
+			long m = in.nextLong();
+			boolean result = checkForEulerCriterion(a,m);
+			if(result)
+			{
+				System.out.println("Yes");
+			}
+			else
+			{
+				System.out.println("No");
+			}
+		}
+	}
+
+	private static boolean checkForEulerCriterion(long a , long m) {
+		
+		
+		// TODO Auto-generated method stub
+		int res = pow(a, (m-1)/2);
+		if(res == 1)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	private static int pow(long a, long m){
+		long power=1;
+		long z =a;
+		long M =m;
+		while(m>0)
+		{
+			while(m%2 == 0)
+			{
+				m=m/2;
+				z=z*z%M;
+			}
+			m--;power=power*z%M;
+		}
+		
+		return (int) power;
+		
+	}
+
+}

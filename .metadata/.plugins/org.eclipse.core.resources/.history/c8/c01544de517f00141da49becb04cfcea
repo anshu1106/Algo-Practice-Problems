@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+
+public class SamAndSubstrings {
+	
+	public static void main(String args[])
+	{
+		Scanner in = new Scanner(System.in);
+		String num=in.next();
+		int dp[]=new int[num.length()];
+		long maxSum=0;
+		dp[0]=num.charAt(0)-'0';
+		for(int i=1;i<num.length();i++)
+		{
+			long subStringSum=0;
+			for(int j=i;j>=0;j--)
+			{
+				Long sub = Long.parseLong(num.substring(j, i));
+				subStringSum+=sub;
+			}
+			dp[i]=dp[i-1]+subStringSum;
+		}
+	}
+
+}

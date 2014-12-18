@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+
+public class Euler1 {
+	
+	public static void main(String args[])
+	{
+		int max =   1000000000+1;
+		int result[] = new int[max-1]; 
+		int threePointer = 0;
+		int fivePointer = 1;
+		result[0]=3;
+		result[1]=5;
+		for(int j=2;result[j]<max;j++)
+		{
+			result[j]=Math.min(result[threePointer]*3,result[fivePointer]*5);
+			if(result[j]==result[threePointer]*3)
+			{
+				threePointer++;
+			}
+			if(result[j]==result[fivePointer]*5)
+			{
+				fivePointer++;
+			}
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}

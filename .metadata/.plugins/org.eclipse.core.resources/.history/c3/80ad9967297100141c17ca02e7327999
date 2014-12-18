@@ -1,0 +1,38 @@
+
+public class Euler14 {
+	
+	public static void main(String args[])
+	{
+		long seq[]=new long[5000000+1];
+		seq[0]=0;
+		seq[1]=1;
+		int num,count;
+		for(int i=2;i<seq.length;i++)
+		{
+			seq[i]=1;
+			num=i;
+			while(num!=1)
+			{
+				if(seq[num]>0)
+				{
+					seq[i]=seq[i]-1+seq[num];
+					 num=1;
+					 continue;
+				}
+				else if(num%2==0)
+				{
+					num=num/2;
+					
+				}
+				else
+				{
+					num=3*num+1;
+				}
+				seq[i]=seq[i]+1;
+			}
+			
+			
+		}
+	}
+
+}

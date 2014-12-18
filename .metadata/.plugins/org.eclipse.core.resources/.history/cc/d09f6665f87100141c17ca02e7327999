@@ -1,0 +1,10 @@
+
+public class Euler10 {
+	int primes[]=new int[1000000+1];
+	
+	public static void main(String args[])
+	{
+		
+	}
+
+}

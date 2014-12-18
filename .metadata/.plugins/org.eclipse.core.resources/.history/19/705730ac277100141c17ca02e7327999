@@ -1,0 +1,9 @@
+
+public class Euler14 {
+	
+	public static void main(String args[])
+	{
+		long seq[]=new long[5000000];
+	}
+
+}
